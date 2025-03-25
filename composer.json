@@ -13,12 +13,12 @@
     },
     "require": {
         "php": "^8.2",
-        "composer/installers": "~1.0"
+        "composer/installers": "~2.0"
     },
     "require-dev": {
         "laravel/pint": "^1.13",
         "phpstan/phpstan": "^1.10",
-        "composer/composer": "1.0.*@dev"
+        "composer/composer": "2.0.*@dev"
     },
     "autoload": {
         "psr-4": {
