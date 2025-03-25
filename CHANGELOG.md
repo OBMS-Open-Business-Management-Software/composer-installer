@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/OBMS-Open-Business-Management-Software/composer-installer/compare/v1.0.0...v1.0.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* remove post-release pipeline ([10a963d](https://github.com/OBMS-Open-Business-Management-Software/composer-installer/commit/10a963dd612212754bc0ed152cc7ffc71ec3bbb0))
+
 ## 1.0.0 (2025-03-25)
 
 
