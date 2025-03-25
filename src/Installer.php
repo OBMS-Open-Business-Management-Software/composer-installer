@@ -93,9 +93,9 @@ class Installer extends LibraryInstaller
      */
     protected function supportedType($type)
     {
-        $supportedType = false;
-
-        $baseType = substr($type, 0, strpos($type, '-'));
+        $supportedType  = false;
+        $stringPosition = strpos($type, '-');
+        $baseType       = substr($type, 0, is_numeric($stringPosition) ? $stringPosition : null);
 
         if (array_key_exists($baseType, $this->supportedTypes)) {
             $supportedType = $baseType;
