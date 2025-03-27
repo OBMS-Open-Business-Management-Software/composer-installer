@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.2](https://github.com/OBMS-Open-Business-Management-Software/composer-installer/compare/v2.0.1...v2.0.2) (2025-03-27)
+
+
+### Bug Fixes
+
+* installer namespace ([6118da9](https://github.com/OBMS-Open-Business-Management-Software/composer-installer/commit/6118da9ed4817adbcc75cb62ab511fde5804dc86))
+
 ## [2.0.1](https://github.com/OBMS-Open-Business-Management-Software/composer-installer/compare/v2.0.0...v2.0.1) (2025-03-25)
 
 
