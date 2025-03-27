@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Blesta\Composer\Installer;
+namespace OBMS\Composer\Installer;
 
 use Composer\Installers\BaseInstaller;
 
