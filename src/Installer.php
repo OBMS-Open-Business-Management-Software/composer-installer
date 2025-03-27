@@ -11,6 +11,11 @@ use InvalidArgumentException;
 
 class Installer extends LibraryInstaller
 {
+    protected $locations = [
+        'product'        => 'app/Products/',
+        'paymentgateway' => 'app/PaymentGateways/',
+    ];
+
     protected $supportedTypes = [
         'obms' => 'OBMSInstaller',
     ];
@@ -20,6 +25,7 @@ class Installer extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
+        $extra         = $package->getExtra();
         $type          = $package->getType();
         $supportedType = $this->supportedType($type);
 
@@ -29,10 +35,9 @@ class Installer extends LibraryInstaller
             );
         }
 
-        $class     = 'OBMS\\Composer\\Installer\\' . $this->supportedTypes[$supportedType];
-        $installer = new $class($package, $this->composer, $this->io);
+        $location = str_replace($supportedType . '-', '', $type);
 
-        return $installer->getInstallPath($package, $supportedType);
+        return $this->locations[$location] . '/' . $extra['dir'] . '/';
     }
 
     /**
@@ -71,11 +76,9 @@ class Installer extends LibraryInstaller
             return false;
         }
 
-        $class     = 'OBMS\\Composer\\Installer\\' . $this->supportedTypes[$supportedType];
-        $installer = new $class(null, $this->composer, $this->io);
-        $locations = $installer->getLocations();
+        $class = 'OBMS\\Composer\\Installer\\' . $this->supportedTypes[$supportedType];
 
-        foreach ($locations as $type => $path) {
+        foreach ($this->locations as $type => $path) {
             if ($supportedType . '-' . $type === $packageType) {
                 return true;
             }
