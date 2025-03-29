@@ -14,6 +14,7 @@ class Installer extends LibraryInstaller
     protected $locations = [
         'product'        => 'app/Products/',
         'paymentgateway' => 'app/PaymentGateways/',
+        'theme'          => 'resources/themes/',
     ];
 
     protected $supportedTypes = [
@@ -75,8 +76,6 @@ class Installer extends LibraryInstaller
         if ($supportedType === false) {
             return false;
         }
-
-        $class = 'OBMS\\Composer\\Installer\\' . $this->supportedTypes[$supportedType];
 
         foreach ($this->locations as $type => $path) {
             if ($supportedType . '-' . $type === $packageType) {
