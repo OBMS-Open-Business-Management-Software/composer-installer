@@ -14,6 +14,7 @@ class Installer extends LibraryInstaller
     protected $locations = [
         'product'        => 'app/Products/',
         'paymentgateway' => 'app/PaymentGateways/',
+        'theme' => 'resources/themes/',
     ];
 
     protected $supportedTypes = [
